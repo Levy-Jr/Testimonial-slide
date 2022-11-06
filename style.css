@@ -1,0 +1,250 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.4;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+  --Dark-Blue: hsl(240, 38%, 20%);
+  --Grayish-Blue: hsl(240, 18%, 77%);
+
+  --fs-body: 1rem;
+
+  --fw-regular: 300;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --ff: 'Inter', sans-serif;
+}
+
+@media (min-width: 48em){
+  :root{
+    --fs-body: 1.25rem;
+  }
+}
+
+@media (min-width: 56.25em){
+  :root{
+    --fs-body: 1.8rem;
+  }
+}
+
+@media (min-width: 75em){
+  :root{
+    --fs-body: 2rem;
+  }
+}
+
+/* utility classes */
+
+.text-center{
+  text-align: center;
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+body {
+  background-image: 
+  url('images/pattern-bg.svg'),
+  url('images/pattern-quotes.svg'),
+  url('images/pattern-curve.svg');
+  background-repeat: no-repeat;
+  background-position: center 5%, center 54%, 0% bottom;
+  background-size: 20rem, 3.5rem, 100%;
+  font-size: var(--fs-body);
+  font-family: var(--ff);
+  text-align: center;
+}
+
+@media (min-width: 48em){
+  body {
+    background-position: 87% 40%, 20% 35%, 0% 100%;
+    background-size: 32.5rem, 4.5rem, 40%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 56.25em){
+  body {
+    background-position: 93% 40%, 20% 35%, 0% 100%;
+    background-size: 32.5rem, 4.5rem, 40%;
+  }
+}
+
+@media (min-width: 75em){
+  body {
+    background-position: 88% 40%, 25% 30%, 0% 100%;
+    background-size: 42rem, 7rem, 40%;
+  }
+}
+
+main {
+  position: relative;
+  margin-top: 3rem;
+  margin-inline: 1.5rem;
+}
+
+@media (min-width: 48em){
+  main {
+    display: flex;
+    justify-content: center;
+    margin: 0rem 2.5rem;
+  }
+
+  blockquote{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+.image {
+  position: relative;
+}
+
+img {
+  max-width: 15rem;
+  margin-inline: auto;
+  border-radius: .3rem;
+}
+
+@media (min-width: 48em){
+  img {
+    max-width: 25rem;
+    position: relative;
+  }
+}
+
+@media (min-width: 75em){
+  img {
+    max-width: 35rem;
+  }
+}
+
+.buttons {
+  display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 95%;
+  background-color: white;
+  border-radius: 100vmax;
+  padding: .7rem 0rem;
+  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 48em){
+  .buttons {
+    left: 20%;
+  }
+}
+
+.buttons > button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-inline: .875rem;
+}
+
+.buttons > button > img{
+  max-width: .7rem;
+}
+
+.text-content {
+  margin-top: 3rem;
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48em){
+  .text-content{
+    max-width: 40rem;
+    transform: translateX(4rem);
+    margin: 0;
+  }
+}
+
+@media (min-width: 48em){
+.text-content .profile{
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: .6em;
+}
+}
+
+.text-content .quote {
+  color: var(--Dark-Blue);
+  font-weight: var(--fw-regular);
+}
+
+.text-content .name {
+  margin-top: 1rem;
+}
+
+@media (min-width: 48em){
+  .text-content .name {
+    margin: 0rem .5rem 0rem;
+  }
+}
+
+.text-content .role {
+  color: var(--Grayish-Blue);
+}
